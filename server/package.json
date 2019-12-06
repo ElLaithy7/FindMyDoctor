@@ -1,0 +1,21 @@
+{
+  "name": "findmydoctor-api",
+  "version": "1.0.0",
+  "description": "Server for Find My Doctor, a platform to connect patients and doctors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amr El Laithy, Farah Hazem",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "mongoose": "^5.7.13",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
+  }
+}
