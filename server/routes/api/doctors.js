@@ -54,9 +54,11 @@ router.post('/login', async (req, res) => {
   if (result.error)
     return res.status(400).send({ error: result.error.details[0].message });
   const { email, password } = req.body;
+  let role = 'doctor';
   let user = await Doctor.findOne({ email });
   if (!user) {
     user = await Patient.findOne({ email });
+    role = 'patient';
   }
   if (!user) return res.status(400).json({ error: 'Email does not exist' });
   const match = bcrypt.compareSync(password, user.password);
@@ -64,7 +66,8 @@ router.post('/login', async (req, res) => {
     const payload = {
       id: user._id,
       name: user.name,
-      email: user.email
+      email: user.email,
+      role
     };
     const token = jwt.sign(payload, tokenKey, { expiresIn: '1h' });
     return res.json({ data: `Bearer ${token}` });
