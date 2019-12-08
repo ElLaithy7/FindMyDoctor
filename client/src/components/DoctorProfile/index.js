@@ -91,7 +91,7 @@ const DoctorProfile = ({ match }) => {
         {doctor && (
           <GoogleMapReact
             bootstrapURLKeys={{
-              key: 'AIzaSyA04eKWIFgJBhtmuR06hie9kwpOZGEOvAA'
+              key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
             }}
             defaultCenter={{
               lat: doctor.lat,
