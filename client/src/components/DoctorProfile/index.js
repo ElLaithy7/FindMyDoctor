@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = ({ text }) => (
+const Marker = ({ text }) => (
   <div
     style={{
       width: '50px',
@@ -99,7 +99,7 @@ const DoctorProfile = ({ match }) => {
             }}
             defaultZoom={15}
           >
-            <AnyReactComponent lat={doctor.lat} lng={doctor.lng} />
+            <Marker lat={doctor.lat} lng={doctor.lng} />
           </GoogleMapReact>
         )}
       </Grid.Column>
