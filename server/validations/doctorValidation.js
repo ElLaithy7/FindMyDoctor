@@ -10,7 +10,8 @@ const createValidation = request => {
     image: Joi.string(),
     specialization: Joi.string().required(),
     lat: Joi.number().required(),
-    lng: Joi.number().required()
+    lng: Joi.number().required(),
+    availability: Joi.string().required()
   };
   return Joi.validate(request, createSchema);
 };

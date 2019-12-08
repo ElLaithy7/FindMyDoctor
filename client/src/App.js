@@ -7,6 +7,7 @@ import DoctorSignup from './components/DoctorSignup';
 import Doctors from './components/Doctors';
 import DoctorProfile from './components/DoctorProfile';
 import Appointments from './components/Appointments';
+import AppointmentReservation from './components/AppointmentReservation';
 
 function App() {
   return (
@@ -18,6 +19,11 @@ function App() {
         <Route exact path="/doctors/:id" component={DoctorProfile} />
         <Route exact path="/doctors" component={Doctors} />
         <Route exact path="/appointments" component={Appointments} />
+        <Route
+          exact
+          path="/reserve/:doctorId"
+          component={AppointmentReservation}
+        />
       </Switch>
     </BrowserRouter>
   );

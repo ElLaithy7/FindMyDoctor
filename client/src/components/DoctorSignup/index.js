@@ -19,6 +19,7 @@ const DoctorSignup = ({ history }) => {
     name: '',
     image: '',
     specialization: '',
+    availability: '',
     lat: '',
     lng: ''
   });
@@ -86,6 +87,14 @@ const DoctorSignup = ({ history }) => {
               value={state.specialization}
               onChange={e =>
                 setState({ ...state, specialization: e.target.value })
+              }
+            />
+            <Form.Input
+              fluid
+              placeholder="Availability"
+              value={state.availability}
+              onChange={e =>
+                setState({ ...state, availability: e.target.value })
               }
             />
             <Message>
