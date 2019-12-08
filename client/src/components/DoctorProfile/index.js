@@ -80,7 +80,7 @@ const DoctorProfile = ({ match }) => {
           />
         )}
         <Header as="h3" color="teal" textAlign="center"></Header>
-        <Link to={`/doctors/${doctor._id}`} className="button">
+        <Link to={`/reserve/${doctor._id}`} className="button">
           <Button basic color="blue">
             Reserve
           </Button>

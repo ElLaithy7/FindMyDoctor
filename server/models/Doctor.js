@@ -25,6 +25,9 @@ const doctorSchema = new Schema({
   },
   ratings: {
     type: [Object]
+  },
+  availability: {
+    type: String
   }
 });
 

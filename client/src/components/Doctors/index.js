@@ -56,7 +56,7 @@ const Doctors = () => {
                       Profile
                     </Button>
                   </Link>
-                  <Link to={`/doctors/${doctor._id}`} className="button">
+                  <Link to={`/reserve/${doctor._id}`} className="button">
                     <Button basic color="blue">
                       Reserve
                     </Button>
