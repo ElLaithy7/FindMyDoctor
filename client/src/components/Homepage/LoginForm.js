@@ -18,10 +18,12 @@ const LoginForm = () => {
   const dispatch = useDispatch();
 
   const onSubmit = () => {
-    post('doctors/login', { email, password }).then(response => {
-      dispatch(logIn(response));
-      localStorage.setItem('token', JSON.stringify(response));
-    });
+    post('doctors/login', { email, password })
+      .then(response => {
+        dispatch(logIn(response));
+        localStorage.setItem('token', JSON.stringify(response));
+      })
+      .catch(error => alert('Incorrect email or password'));
   };
 
   return (
