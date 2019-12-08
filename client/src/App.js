@@ -5,6 +5,7 @@ import Homepage from './components/Homepage';
 import UserSignup from './components/UserSignup';
 import DoctorSignup from './components/DoctorSignup';
 import Doctors from './components/Doctors';
+import DoctorProfile from './components/DoctorProfile';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/" component={Homepage} />
         <Route exact path="/user/signup" component={UserSignup} />
         <Route exact path="/doctor/signup" component={DoctorSignup} />
+        <Route exact path="/doctors/:id" component={DoctorProfile} />
         <Route exact path="/doctors" component={Doctors} />
       </Switch>
     </BrowserRouter>
