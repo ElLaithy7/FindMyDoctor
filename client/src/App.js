@@ -1,6 +1,5 @@
-import React from 'react';
-import { Switch, Route } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+import React, { Fragment } from 'react';
+import { Switch, Route, withRouter } from 'react-router';
 import Homepage from './components/Homepage';
 import UserSignup from './components/UserSignup';
 import DoctorSignup from './components/DoctorSignup';
@@ -8,10 +7,28 @@ import Doctors from './components/Doctors';
 import DoctorProfile from './components/DoctorProfile';
 import Appointments from './components/Appointments';
 import AppointmentReservation from './components/AppointmentReservation';
+import { Button } from 'semantic-ui-react';
+import { useDispatch, useSelector } from 'react-redux';
+import { logOut } from './redux/actions';
 
-function App() {
+function App({ history }) {
+  const dispatch = useDispatch();
+
+  const logout = () => {
+    dispatch(logOut());
+    localStorage.removeItem('token');
+    history.push('/');
+  };
+
+  const token = useSelector(state => state.token);
+
   return (
-    <BrowserRouter>
+    <Fragment>
+      {token && (
+        <Button basic color="blue" onClick={logout}>
+          Logout
+        </Button>
+      )}
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route exact path="/user/signup" component={UserSignup} />
@@ -25,8 +42,8 @@ function App() {
           component={AppointmentReservation}
         />
       </Switch>
-    </BrowserRouter>
+    </Fragment>
   );
 }
 
-export default App;
+export default withRouter(App);
