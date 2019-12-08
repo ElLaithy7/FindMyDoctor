@@ -13,7 +13,7 @@ import {
 import { get } from '../../utils/axios';
 import { Link } from 'react-router-dom';
 
-const Doctors = ({ history }) => {
+const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
