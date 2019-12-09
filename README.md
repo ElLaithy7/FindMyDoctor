@@ -2,6 +2,11 @@
 
 A MERN stack app to connect patients and doctors.
 
+# Dependencies
+
+- Dependencies for the server are declared in server/package.json
+- Dependencies for the client are declared in client/package.json
+
 # To run the app
 
 - Install NodeJs from this link https://nodejs.org/en/
