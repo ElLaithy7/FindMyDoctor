@@ -5,6 +5,7 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+    image: laithy/web
     ports:
       - '3001:3001'
     volumes:
@@ -16,6 +17,7 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
+    image: laithy/api
     ports:
       - '3000:3000'
     volumes:
